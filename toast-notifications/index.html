@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notifications</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="ShowMessage(successMsg)">Success</button>
+        <button onclick="ShowMessage(errorMsg)">Error</button>
+        <button onclick="ShowMessage(invalidMsg)">Invalid</button>
+    </div>
+    <div id="toastBox">
+
+    </div>
+
+
+    <script>
+        let toastBox = document.getElementById('toastBox');
+        let successMsg = 'Your Request has been received successfully';
+        let errorMsg = "You have an error on the details you're trying to submit, please check";
+        let invalidMsg = "You're trying to submit invalid data, please recheck before submitting";
+
+        function ShowMessage(msg){
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = msg;
+            toastBox.appendChild(toast);
+        }
+
+
+    </script>
+</body>
+</html>
